@@ -1,0 +1,503 @@
+دستگاه عصبی
+Nervous System
+
+پروسه‌ی فرگشت
+Evolutionary Process
+
+فرگشت
+Evolution
+
+نورون
+Neuron
+
+آکسون
+Axon
+
+دارینه
+Dendrite
+
+جسم یاخته‌ای
+Soma
+
+پیام‌رسان عصبی
+Neurotransmitter
+
+برانگیختن
+Excitation
+
+مهارکردن
+Inhibition
+
+پریکاریون
+Perikaryon
+
+سیتوپلاسم
+Cytoplasm
+
+هسته
+Nucleus
+
+نوروپلاسم
+Neuroplasm
+
+شبکه‌ی آندوپلاسمی
+Endoplasmic Reticulum
+
+میتوکندری
+Mitochondria
+
+دستگاه گلژی
+Golgi Apparatus
+
+لیزوزوم
+Lysosome
+
+نقطه تعادل
+Equilibrium Point
+
+درگاه شیمیایی
+Ligand-gated
+
+ضربه
+Spike
+
+میلین
+Myelin
+
+گره‌های رانویه
+Nodes of Ranvier
+
+دستگاه اعصاب پیرامون
+Peripheral Nervous System
+
+سلولهای شوآن
+Schwann Cells
+
+دستگاه اعصاب مرکزی
+Central Nervous System
+
+اولیگودندرگلیا
+Oligodendrocyte
+
+سیناپس
+Synapse
+
+شکل‌پذیری عصبی
+Neuroplasticity
+
+یادگیری
+Learning
+
+اتصالات یکسوساز
+Rectifying Junctions
+
+همزمان‌سازی
+Synchronization
+
+کیسه‌های سیناپسی
+Synaptic Vesicles
+
+تک‌قطبی
+Unipolar
+
+نئوریت
+Neurite
+
+دوقطبی
+Bipolar
+
+چندقطبی
+Multipolar
+
+شکل‌پذیری
+Plasticity
+
+نظریه‌ی هب
+Hebbian theory
+
+رد عصبی
+Engram
+
+تقویت بلند مدت
+Long-term potentiation
+
+تضعیف بلند مدت
+Long-term depression
+
+هیپوکمپوس
+Hippocampus
+
+آمیگدال
+Amygdala
+
+نئوقشر
+Neocortex
+
+یادگیری وابسته به زمان ضربه
+Spike-timing dependent plasticity
+
+هسته‌ی پشتی حلزونی
+Dorsal cochlear nucleus
+
+تشکیل میدان‌های تاثیر
+Formation of receptive fields
+
+رشد میزان‌سازی جهت
+Development of orientation tuning
+
+گزینندگی مسیر
+Direction selectivity
+
+سلول‌های مکان
+Place cells
+
+شبکیه
+Retina
+
+گیرنده‌های نوری
+Photoreceptors
+
+ناوردا
+Invariant
+
+تار شده
+Obscured
+
+مسدود شده
+Occluded
+
+بینایی ماشین
+Computer Vision
+
+درون‌نگری
+Introspection
+
+روان‌فیزیک
+Psychophysics
+
+مدل‌سازی محاسباتی
+Computational Modeling
+
+عدسی
+Lens
+
+قرنیه
+Cornea
+
+مایع زجاجیه
+Vitreous body
+
+سلول‌های اپیتلیوم رنگدانه‌دار
+Pigment epithelial cells
+
+سلول مخروطی
+Cone cell
+
+سلول استوانه‌ای
+Rod cell
+
+لکه‌ی زرد
+Macula
+
+گودی مرکزی
+Fovea
+
+نقطه‌ی کور
+Blind spot
+
+دید در روز
+Photopic
+
+دید در شب
+Scotopic
+
+شب‌کوری
+Nyctalopia
+
+سلول‌های گانگلیون
+Ganglion cells
+
+عصب باصره
+Optic nerve
+
+هسته‌ی زانویی جانبی
+Lateral geniculate nucleus
+
+نورون‌های بینابینی
+Interneurons
+
+سلول‌های دوقطبی
+Bipolar cells
+
+سلول‌های افقی
+Horizontal cells
+
+سلول‌های آماکرین
+Amacrine cells
+
+میدان تاثیر
+Receptive field
+
+مدور بودن
+Circularity
+
+ساختار متضاد مرکز-اطراف
+Antagonistic center-surround organization
+
+زیرمیدان
+Subfields
+
+تالاموس
+Thalamus
+
+قشر بینایی اولیه
+Primary visual cortex
+
+میله
+Bar
+
+مشبک میله‌ای
+Gratings
+
+محور جهت
+Axis of orientation
+
+مسیر پشتی
+Dorsal stream
+
+مسیر شکمی
+Ventral stream
+
+خط‌سیر کجایی
+Where pathway
+
+خط‌سیر چیستی
+What pathway
+
+چلیپای نوری
+Optic chiasm
+
+قشر مغز
+Cerebral cortex
+
+لوب گیج‌گاهی
+Temporal lobe
+
+لوب آهیانه‌ای
+Parietal lobe
+
+لوب پیشانی
+Frontal lobe
+
+لوب پس‌سری
+Occipital lobe
+
+نواحی برادمن
+Brodmann areas
+
+گزینش‌پذیر نسبت به جهت
+Orientation selective
+
+اَبَرستون
+Hypercolumns
+
+حباب
+Blob
+
+قشر فرامخطط
+Extrastriate cortex
+
+مدولاسیون توجهی
+Attentional modulation
+
+توجه گزینشی
+Selective attention
+
+پرسپترون
+Perceptron
+
+شبکه‌های عصبی ضربه‌ای
+Spiking Neural Networks
+
+مدار منطق
+Logic circuit
+
+تجمیع و آتش
+Integrate \& Fire
+
+تجمیع و آتش نشتی
+Leaky Integrate \& Fire
+
+شبکه‌ی پیچشی سلسله مراتبی
+Hierarchical convolutional network
+
+گزیننده
+Selective
+
+ناوردایی
+Invariance
+
+مرتبه
+Rank
+
+تبدیل شدت-تاخیر
+Intensity–latency conversion
+
+تصادفی
+Stochastic
+
+تمایز سلولی
+Cell Differentiation
+
+ظروف پتری
+Petri dishes
+
+تصادفی بودن
+Randomness
+
+درون‌جاندازی
+in vivo
+
+درون‌کشتگاهی
+in vitro
+
+درون‌رایانه‌ای
+in silico
+
+زمانی‌فضایی
+Spatiotemporal
+
+پتانسیل‌های عمل
+Action Potentials
+
+دنباله ضربه
+Spike train
+
+فرآیند نقطه‌ای
+Point process
+
+فضایی
+Spatial
+
+زمانی
+Temporal
+
+تبدیل فوریه
+Fourier Transformation
+
+پیش‌خور
+Feed-forward
+
+فضاسازی زمان
+Time Spatialization
+
+محاسبات وابسته به وضعیت
+State-Dependent Computation
+
+تکامل خط‌سیرهای عصبی
+Neural Trajectories
+
+زمان متغیر
+Time-varying
+
+محاسبات انباره‌ای
+Reservoir Computing
+
+شبکه‌های عصبی بازگشتی
+Recurrent Neural Networks
+
+ماشین حالت مایع
+Liquid State Machine
+
+شبکه‌ی انعکاس حالت
+Echo State Network
+
+بلادرنگ
+Real-time
+
+ماشین بردار پشتیبان
+Support Vector Machine
+
+برانگیختنی
+Excitable
+
+ریزمدار قشری
+Cortical Microcircuit
+
+شکل‌پذیری کوتاه مدت
+Short-term Plasticity
+
+توان محاسباتی جهان‌شمول
+Universal Computational Power
+
+لایه‌ی قرائت
+Readout Layer
+
+آنالیز افتراقی خطی
+Linear Discriminant Analysis
+
+حافظه‌ی محو شونده
+Fading Memory
+
+مدارات مجتمع دیجیتال برنامه‌پذیر
+Field-Programmable Gate Array
+
+طنین
+Reverberation
+
+خمینه
+Manifold
+
+صاف شدن
+Flattening
+
+سلول‌های فوق پیچیده
+Hypercomplex cells
+
+رتینوتوپیگ
+Retinotopic
+
+اشتراک وزنی
+Weight sharing
+
+توصیف ساختاری
+Structural descriptions
+
+تشخیص با مولفه‌ها
+Recognition-by-components
+
+روان‌فیزیکی
+Psychophysical
+
+نسبت اندازه
+Aspect ratio
+
+همگشت
+Convolution
+
+نشتی
+Leakage
+
+وادارنده
+Inhibitory
+
+برانگیزنده
+Excitatory
+
+مدت انکسار
+Refractory period
+
+جهان کوچک
+Small-world
+
+مشبک
+Lattice
+
+خاصیت سراسری
+Global property
+
+خاصیت محلی
+Local property
+
+کرم الگانس
+Caenorhabditis elegans

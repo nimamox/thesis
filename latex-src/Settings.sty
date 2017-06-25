@@ -1,0 +1,222 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%											Auxiliary Packages											%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Math Package
+	\usepackage{algorithm}
+	\usepackage{algpseudocode}
+	\usepackage[fleqn]{amsmath}
+	\usepackage{amssymb,amsthm}
+	\usepackage{units}
+
+% Figures & Tables
+	\usepackage{graphicx}
+	\usepackage{booktabs}
+	\usepackage{footnote}
+	\usepackage{multirow}
+	\usepackage{ctable}
+	\usepackage{caption}
+	\usepackage[subfigure]{tocloft} 
+	\usepackage{multirow}
+
+% PDF & RefferEnces
+	\usepackage[breaklinks=true]{hyperref}
+	\usepackage[square,numbers,sort&compress]{natbib}
+	\usepackage{notoccite}
+
+% Margin & Spacing
+	\usepackage{fancyhdr}
+	\usepackage[top=3cm,right=3cm,bottom=2.5cm,left=2.5cm]{geometry}
+	\usepackage{setspace}
+	\usepackage{enumitem}
+	\usepackage[bottom,flushmargin]{footmisc}
+	\usepackage{color}
+	\usepackage{pdflscape}
+	\usepackage{pdfpages}
+	\usepackage{ifthen,changepage}
+
+% XePersian Package: All auxiliary packages should be inserted before this package
+	\usepackage[extrafootnotefeatures]{xepersian}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%												Font Settings												%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\settextfont[Scale=1.1]{XB Zar}
+	\setdigitfont{XB Zar}
+	\setdigitfont{HM XNiloofar}
+	\setlatintextfont{LinLibertine}
+	\defpersianfont\Nastaliq{IranNastaliq}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%						 Highlights   \colorbox{Yellow}{.....} Settings						%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\definecolor{Yellow}{rgb}{1.0, 0.88, 0.21}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%				 Multi-Line Comments Settings	    \/* comments.... */						%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\long\def\/*#1*/{}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%						Blank Page for two-sided formats Settings								%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Blank Page for two-sided formats
+	\newcommand{\blankpage}{
+		\if@twoside
+			\checkoddpage
+			\ifoddpage
+				\newpage
+				\thispagestyle{empty}
+				\mbox{}
+				\newpage
+			\fi
+		\else
+			\newpage
+		\fi
+	}
+
+% Blank Page for english Abstract two-sided formats
+	\newcommand{\blankpageAbsEn}{
+		\if@twoside
+			\checkoddpage
+			\ifoddpage
+			\else
+				\newpage
+				\thispagestyle{empty}
+				\mbox{}
+				\newpage
+			\fi
+		\fi
+	}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%						Space Settings for Lists, equations, ... 							%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\renewcommand{\@listI}{
+		\setlength{\topsep}{6pt}
+		\setlength{\partopsep}{0pt}
+		\setlength{\parsep}{3pt}
+		\setlength{\itemsep}{3pt}
+	}
+	\expandafter\def\expandafter\normalsize\expandafter{%
+		\normalsize
+		\setlength\abovedisplayskip{5pt}
+		\setlength\belowdisplayskip{5pt}
+		\setlength\abovedisplayshortskip{5pt}
+		\setlength\belowdisplayshortskip{5pt}
+		\setlength\mathindent{0pt}
+		\renewcommand{\arraystretch}{1.2}
+	}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%				Table of Content, List of Figures, List of Tables Settings					%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\setlength{\cftfigindent}{0pt}
+	\setlength{\cfttabindent}{0pt}
+	\renewcommand{\cftdotsep}{0.4}
+	\renewcommand{\cftfigpresnum}{شکل }
+	\addtolength{\cftfignumwidth}{3.2em}
+	\renewcommand{\cfttabpresnum}{جدول }
+	\addtolength{\cfttabnumwidth}{3.2em}
+	\renewcommand{\cftchappresnum}{فصل }
+	\settowidth{\cftchapnumwidth}{{\bfseries فصل 4 \quad}}
+	\renewcommand{\cftfigaftersnum}{:}
+	\renewcommand{\cfttabaftersnum}{:}
+	\renewcommand{\cftchapaftersnum}{:}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%											Header & Footer Settings									%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\makeatletter
+		\pagestyle{fancy}
+		\renewcommand{\headrulewidth}{0.75 pt}
+		\if@twoside
+			\fancyhead[LO,RE]{\thepage}
+			\renewcommand{\chaptermark}[1]{
+			    \fancyhead[RO]{\textit{\cftchappresnum\space\thechapter.\ #1}}
+		    }
+		    \fancyhead[LE]{\textit{\@FaLevel}}
+		\else
+			\fancyhead[L]{\thepage}
+		\fi
+		\cfoot{}
+		\renewcommand{\footnotemargin}{1em}
+	\makeatother
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Removing header & footer in pages between Chapters for two-sided formats %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	 \makeatletter
+		\renewcommand*{\cleardoublepage}{\clearpage\if@twoside \ifodd\c@page\else
+			\hbox{}
+			\thispagestyle{empty}
+			\newpage
+			\if@twocolumn\hbox{}\newpage\fi\fi\fi
+		}
+	\makeatother
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%												Hyperlinks Settings										 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 	\hypersetup{
+		colorlinks = false,
+		citecolor = blue,
+		linktocpage = true
+ 	}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%												Captions Settings										 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 	\setlength{\captionmargin}{30pt}
+	\captionsetup{
+		skip=10pt,
+		justification=justified,
+		font={footnotesize,stretch=1.3},
+		labelfont=bf,
+		textfont=bf,
+		indention=0pt
+ 	}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%												Appendices Settings									 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+ 	\g@addto@macro\appendix{
+	 	\phantomsection
+ 		\renewcommand{\appendixname}{پیوست}
+ 		\renewcommand{\chaptermark}[1]{
+ 			\fancyhead[RO]{\textit{\appendixname\space\thechapter.\ #1}}
+ 		}
+ 		\addtocontents{toc}{
+ 			\protect\renewcommand{\protect\cftchappresnum}{\appendixname\space}
+ 			\protect\settowidth{\protect\cftchapnumwidth}{{\bfseries پیوست آ \quad}}
+ 		}
+ 	}
+\makeatother
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%				Theorem, Lemma, Example, Prposition, and ... Settings					%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\theoremstyle{definition}
+	\newtheorem{definition}{تعریف}[section]
+	\theoremstyle{theorem}
+	\newtheorem{theorem}[definition]{قضیه}
+	\newtheorem{lemma}[definition]{لم}
+	\newtheorem{proposition}[definition]{گزاره}
+	\newtheorem{corollary}[definition]{نتیجه}
+	\newtheorem{remark}[definition]{ملاحظه}
+	\theoremstyle{definition}
+	\newtheorem{example}[definition]{مثال}
+	\renewcommand\proofname{\textbf{برهان}}

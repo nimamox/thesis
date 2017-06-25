@@ -1,0 +1,201 @@
+\begin {thebibliography}{99}
+\bibitem {fn1}\lr {Nervous System}
+\bibitem {fn2}\lr {Evolutionary Process}
+\bibitem {fn3}\lr {Neuron}
+\bibitem {fn4}\lr {Axon}
+\bibitem {fn5}\lr {Dendrite}
+\bibitem {fn6}\lr {Soma}
+\bibitem {fn7}\lr {Neurotransmitter}
+\bibitem {fn8}\lr {Excitation}
+\bibitem {fn9}\lr {Inhibition}
+\bibitem {fn10}\lr {Perikaryon}
+\bibitem {fn11}\lr {Cytoplasm}
+\bibitem {fn12}\lr {Nucleus}
+\bibitem {fn13}\lr {Neuroplasm}
+\bibitem {fn14}\lr {Endoplasmic Reticulum}
+\bibitem {fn15}\lr {Mitochondria}
+\bibitem {fn16}\lr {Golgi Apparatus}
+\bibitem {fn17}\lr {Lysosome}
+\bibitem {fn18}\lr {Equilibrium Point}
+\bibitem {fn19}\lr {Voltage-Sensitive}
+\bibitem {fn20}\lr {Ligand-Gated}
+\bibitem {fn21}\lr {Mechanically Gated}
+\bibitem {fn22}\lr {Spike}
+\bibitem {fn23}\lr {Myelin}
+\bibitem {fn24}\lr {Nodes of Ranvier}
+\bibitem {fn25}\lr {Peripheral Nervous System}
+\bibitem {fn26}\lr {Schwann Cells}
+\bibitem {fn27}\lr {Central Nervous System}
+\bibitem {fn28}\lr {Oligodendrocyte}
+\bibitem {fn29}\lr {Synapse}
+\bibitem {fn30}\lr {Neuroplasticity}
+\bibitem {fn31}\lr {Learning}
+\bibitem {fn32}\lr {Synaptic Efficacy}
+\bibitem {fn33}\lr {Rectifying Junctions}
+\bibitem {fn34}\lr {Synchronization}
+\bibitem {fn35}\lr {Synaptic Vesicles}
+\bibitem {fn36}\lr {Unipolar}
+\bibitem {fn37}\lr {Neurite}
+\bibitem {fn38}\lr {Bipolar}
+\bibitem {fn39}\lr {Multipolar}
+\bibitem {fn40}\lr {Plasticity}
+\bibitem {fn41}\lr {Hebbian theory}
+\bibitem {fn42}\lr {Engram}
+\bibitem {fn43}\lr {Long-term potentiation}
+\bibitem {fn44}\lr {Long-term depression}
+\bibitem {fn45}\lr {Hippocampus}
+\bibitem {fn46}\lr {Amygdala}
+\bibitem {fn47}\lr {Neocortex}
+\bibitem {fn48}\lr {Spike-timing dependent plasticity}
+\bibitem {fn49}\lr {Dorsal cochlear nucleus}
+\bibitem {fn50}\lr {Formation of receptive fields}
+\bibitem {fn51}\lr {Development of orientation tuning}
+\bibitem {fn52}\lr {Direction selectivity}
+\bibitem {fn53}\lr {Place cells}
+\bibitem {fn1}\lr {Retina}
+\bibitem {fn2}\lr {Photoreceptors}
+\bibitem {fn3}\lr {Invariant}
+\bibitem {fn4}\lr {Obscured}
+\bibitem {fn5}\lr {Occluded}
+\bibitem {fn6}\lr {Computer Vision}
+\bibitem {fn7}\lr {Introspection}
+\bibitem {fn8}\lr {Psychophysics}
+\bibitem {fn9}\lr {Computational Modeling}
+\bibitem {fn10}\lr {Lens}
+\bibitem {fn11}\lr {Cornea}
+\bibitem {fn12}\lr {Vitreous body}
+\bibitem {fn13}\lr {Pigment epithelial cells}
+\bibitem {fn14}\lr {Cone cell}
+\bibitem {fn15}\lr {Rod cell}
+\bibitem {fn16}\lr {Macula}
+\bibitem {fn17}\lr {Fovea}
+\bibitem {fn18}\lr {Blind spot}
+\bibitem {fn19}\lr {Photopic}
+\bibitem {fn20}\lr {Scotopic}
+\bibitem {fn21}\lr {Nyctalopia}
+\bibitem {fn22}\lr {Ganglion cells}
+\bibitem {fn23}\lr {Optic nerve}
+\bibitem {fn24}\lr {Lateral geniculate nucleus}
+\bibitem {fn25}\lr {Interneurons}
+\bibitem {fn26}\lr {Bipolar cells}
+\bibitem {fn27}\lr {Horizontal cells}
+\bibitem {fn28}\lr {Amacrine cells}
+\bibitem {fn29}\lr {Receptive field}
+\bibitem {fn30}\lr {Circularity}
+\bibitem {fn31}\lr {Antagonistic center-surround organization}
+\bibitem {fn32}\lr {Subfields}
+\bibitem {fn33}\lr {Parallel on- and off-pathways}
+\bibitem {fn34}\lr {Thalamus}
+\bibitem {fn35}\lr {Primary visual cortex}
+\bibitem {fn36}\lr {Bar}
+\bibitem {fn37}\lr {Gratings}
+\bibitem {fn38}\lr {Axis of orientation}
+\bibitem {fn39}\lr {Dorsal stream}
+\bibitem {fn40}\lr {Ventral stream}
+\bibitem {fn41}\lr {Where pathway}
+\bibitem {fn42}\lr {What pathway}
+\bibitem {fn43}\lr {Optic chiasm}
+\bibitem {fn44}\lr {Cerebral cortex}
+\bibitem {fn45}\lr {Temporal lobe}
+\bibitem {fn46}\lr {Parietal lobe}
+\bibitem {fn47}\lr {Frontal lobe}
+\bibitem {fn48}\lr {Occipital lobe}
+\bibitem {fn49}\lr {What stream}
+\bibitem {fn50}\lr {Where stream}
+\bibitem {fn51}\lr {Brodmann areas}
+\bibitem {fn52}\lr {Orientation selective}
+\bibitem {fn53}\lr {Hypercolumns}
+\bibitem {fn54}\lr {Blobs}
+\bibitem {fn55}\lr {Extrastriate cortex}
+\bibitem {fn56}\lr {Attentional modulation}
+\bibitem {fn57}\lr {Selective attention}
+\bibitem {fn1}\lr {Rosenblatt}
+\bibitem {fn2}\lr {Perceptron}
+\bibitem {fn3}\lr {Spiking Neural Networks}
+\bibitem {fn4}\lr {Warren McCulloch}
+\bibitem {fn5}\lr {Walter Pitts}
+\bibitem {fn6}\lr {Logic circuit}
+\bibitem {fn7}\lr {Frank Rosenblatt}
+\bibitem {fn8}\lr {Marvin Minsky}
+\bibitem {fn9}\lr {Seymour Papert}
+\bibitem {fn10}\lr {John Hopfield}
+\bibitem {fn11}\lr {David Rumelhart}
+\bibitem {fn12}\lr {Integrate \& Fire}
+\bibitem {fn13}\lr {Leaky Integrate \& Fire}
+\bibitem {fn14}\lr {Flash}
+\bibitem {fn15}\lr {Hierarchical convolutional network}
+\bibitem {fn16}\lr {Selective}
+\bibitem {fn17}\lr {Invariance}
+\bibitem {fn18}\lr {Rank}
+\bibitem {fn19}\lr {Intensity–latency conversion}
+\bibitem {fn20}\lr {Stochastic}
+\bibitem {fn21}\lr {Circuitry}
+\bibitem {fn22}\lr {Cell Differentiation}
+\bibitem {fn23}\lr {Petri dishes}
+\bibitem {fn24}\lr {Randomness}
+\bibitem {fn25}\lr {in vivo}
+\bibitem {fn26}\lr {in vitro}
+\bibitem {fn27}\lr {in silico}
+\bibitem {fn28}\lr {Spatiotemporal}
+\bibitem {fn29}\lr {Action Potentials}
+\bibitem {fn30}\lr {Spike train}
+\bibitem {fn31}\lr {Point processes}
+\bibitem {fn32}\lr {Spatial}
+\bibitem {fn33}\lr {Temporal}
+\bibitem {fn34}\lr {Fourier Transformation}
+\bibitem {fn35}\lr {Feed-forward}
+\bibitem {fn36}\lr {Time Spatialization}
+\bibitem {fn37}\lr {State-Dependent Computation}
+\bibitem {fn38}\lr {Neural Trajectories}
+\bibitem {fn39}\lr {Time-varying}
+\bibitem {fn40}\lr {Reservoir Computing}
+\bibitem {fn41}\lr {Recurrent Neural Networks}
+\bibitem {fn42}\lr {Liquid State Machine}
+\bibitem {fn43}\lr {Echo State Network}
+\bibitem {fn44}\lr {Real-time}
+\bibitem {fn45}\lr {Support Vector Machine}
+\bibitem {fn46}\lr {Excitable}
+\bibitem {fn47}\lr {Cortical Microcircuit}
+\bibitem {fn48}\lr {Short-term Plasticity}
+\bibitem {fn49}\lr {Universal Computational Power}
+\bibitem {fn50}\lr {Readout Layer}
+\bibitem {fn51}\lr {Linear Discriminant Analysis}
+\bibitem {fn52}\lr {Fading Memory}
+\bibitem {fn53}\lr {Hippocampus}
+\bibitem {fn54}\lr {Field-Programmable Gate Array}
+\bibitem {fn55}\lr {Long-term potentiation}
+\bibitem {fn56}\lr {Long-term depression}
+\bibitem {fn57}\lr {N-Methyl-D-aspartic}
+\bibitem {fn58}\lr {Reverberation}
+\bibitem {fn59}\lr {Multielectrode array}
+\bibitem {fn60}تعداد دسته‌های بصری، حدود ۳۰۰۰ عدد تخمین زده شده‌اند.\cite {biederman1987recognition} یعنی یک کودک ۶ ساله باید هر روز به طور متوسط حدود ۱۴ شی در روز یاد بگیرد. یا یک شی به ازای هر ساعت بیدار بودن.
+\bibitem {fn61}\lr {Manifold}
+\bibitem {fn62}\lr {Flattening}
+\bibitem {fn63}Neurobiological
+\bibitem {fn64}\lr {Hypercomplex cells} یا \lr {End-stopped cells}
+\bibitem {fn65}\lr {Retinotopic}
+\bibitem {fn66}\lr {Weight sharing}
+\bibitem {fn67}\lr {Structural descriptions}
+\bibitem {fn68}\lr {Recognition-by-components}
+\bibitem {fn69}\lr {Psychophysical}
+\bibitem {fn1}قابل بارگذاری از \lr {http://www.vision.caltech.edu/}
+\bibitem {fn2}\lr {Aspect ratio}
+\bibitem {fn3}\lr {Convolution}
+\bibitem {fn4}\lr {Gabor}
+\bibitem {fn5}lr{Lateral inhibition}
+\bibitem {fn6}\lr {Weight sharing}
+\bibitem {fn7}\lr {Leakage}
+\bibitem {fn8}\lr {Inhibitory}
+\bibitem {fn9}\lr {Excitatory}
+\bibitem {fn10}\lr {Refractory period}
+\bibitem {fn11}\lr {Small-world}
+\bibitem {fn12}\lr {Lattice}
+\bibitem {fn13}\lr {Global property}
+\bibitem {fn14}\lr {Local property}
+\bibitem {fn15}\lr {Caenorhabditis elegans}
+\bibitem {fn1}\href {http://eigen.tuxfamily.org/}{\texttt {http://eigen.tuxfamily.org/}}
+\bibitem {fn2}\lr {Streaming SIMD Extensions}
+\bibitem {fn3}\href {http://lodev.org/lodepng/}{\texttt {http://lodev.org/lodepng/}}
+\bibitem {fn4}\href {http://uscilab.github.io/cereal/}{\texttt {http://uscilab.github.io/cereal/}}
+\bibitem {fn5}Serialization
+\end {thebibliography}

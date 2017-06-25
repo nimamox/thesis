@@ -1,0 +1,330 @@
+\chapter{بسته‌ی لاتک پایان‌نامه‌ی دانشگاه صنعتی شریف}
+\section{معرفی}
+حروف‌چینی پروژه‌، پایان‌نامه یا رساله یکی از موارد پرکاربرد استفاده از زی‌پرشین است. بسته‌ی لاتک دانشگاه شریف (ورژن 1.7- مؤرخ 93/1/18) با نام 
+\verb!Sharif_Thesis_Package!
+برای حروف‌چینی پروژه‌ها، پایان‌نامه‌ها و رساله‌های دانشگاه صنعتی شریف به همت آقای \textit{افرند دینی} دانشجوی ارشد مهندسی مکانیک گرایش تبدیل انرژی این دانشگاه تدوین شده است. این فایل به گونه‌ای طراحی گشته که کلیه خواسته‌های مورد نیاز مدیریت تحصیلات تکمیلی و کتابخانه‌ی مرکزی دانشگاه را برآورده می‌کند و نیز، حروف‌چینی بسیاری از قسمت‌های آن به طور خودکار انجام می‌شود که نیاز به تنظیمات فراوان و غیر معمول را برای هر کاربر مبتدی از بین می‌برد.
+\section{فایل‌های موجود در بسته}
+کلیه فایل‌های لازم برای حروف‌چینی، داخل پوشه‌ای به نام 
+\verb!Sharif_Thesis_Package!
+ قرار داده شده است. از آنجا که پایان‌نامه یا رساله، یک نوشته بلند محسوب می‌شود، اگر همه تنظیمات و مطالب پایان‌نامه درون یک فایل قرار گیرد، باعث شلوغی و سردرگمی خواهد شد. به همین دلیل، قسمت‌های مختلف پایان‌نامه یا رساله داخل فایل‌های جداگانه قرار گرفته است. مثلاً تنظیمات پایه‌ای کلاس، داخل فایل
+\verb!Sharif_Class.cls!، 
+و تنظیمات قابل تغییر توسط کاربر داخل
+\verb!Settings.sty!،
+نوشته شده‌اند. نکته مهمی که در اینجا وجود دارد این است که از بین این  فایل‌ها، فقط فایل 
+\verb!Sharif_Thesis.tex!
+قابل اجرا است. یعنی بعد از تغییر فایل‌های دیگر، برای دیدن نتیجه تغییرات، باید این فایل را اجرا کرد. بقیه فایل‌ها به این فایل، کمک می‌کنند تا بتوانیم خروجی کار را ببینیم. اگر به فایل 
+\verb!Sharif_Thesis.tex!
+دقت کنید، متوجه می‌شوید که قسمت‌های مختلف پایان‌نامه، توسط دستورهایی مانند 
+\verb!include!
+به فایل اصلی، یعنی 
+\verb!Sharif_Thesis.tex!
+معرفی شده‌اند. بنابراین، فایلی که همیشه با آن سروکار داریم، فایل 
+\verb!Sharif_Thesis.tex!
+است. در این فایل، فرض شده است که پایان‌نامه یا رساله شما، از 6 فصل و 5 پیوست، تشکیل شده است که می‌توان هر بخش را با برداشتن (گذاشتن) دستور \% فعال (غیرفعال) نمود. \\
+علاوه بر این، پوشه‌های دیگری نیز در بسته وجود دارند:\\
+پوشه‌ی
+\verb!1.FrontMatters! :
+\begin{itemize}
+\item
+فایل‌ اطلاعات صفحات اول فارسی و انگلیسی با نام
+\verb!jeldinfo.tex!،
+\item
+فایل‌ صفحه‌ی امضاهای پایان‌نامه با نام
+\verb!Signatures.pdf!،
+\item
+فایل‌ صفحه‌ی چکیده‌ی فارسی با نام
+\verb!abstract_fa.tex!،
+\item
+فایل‌ صفحه‌ی قدردانی با نام
+\verb!thanksto.tex!،
+\item
+فایل‌ صفحه‌ی چکیده‌ی انگلیسی با نام
+\verb!abstract_en.tex!،
+\end{itemize}
+پوشه‌ی
+\verb!2.Chapters! :
+\begin{itemize}
+\item
+پوشه‌های مربوط به این فایل آموزش
+\item
+پوشه‌های مربوط به فصل‌های پایان‌نامه مشخص شده بر اساس نام هر فصل
+\end{itemize}
+پوشه‌ی
+\verb!3.References! :
+\begin{itemize}
+\item
+فایل مراجع با نام 
+\verb!References.bib!
+\item
+نمونه‌ای از انواع فرمت‌های مراجع فارسی و انگلیسی در فایل 
+\verb!PersianBibSamples.bib!
+\end{itemize}
+
+پوشه‌ی
+\verb!4.Appendices! :
+\begin{itemize}
+\item
+فایل‌‌های پیوست، مشخص شده بر اساس نام 
+\item
+فایل‌‌های \verb!pdf! مقالات فارسی و انگلیسی تهیه شده از پایان‌نامه با نام‌های \verb!PapreFa! و \verb!PaperEn!
+\end{itemize}
+\newpage
+\section{نکات مهم و تنظیمات لازم}
+\begin{itemize}
+\item
+این بسته در حال حاضر تنها سازگار با 
+\verb!TexLive2011!
+و مرجع‌دهی
+\verb!Bibtex!
+می‌باشد.
+\item
+با استفاده از این بسته پروژه‌های دوره‌ی کارشناسی، پایان‌نامه‌های دوره‌ی کارشناسی ارشد و رساله‌های دوره‌ی دکترا قابل تدوین می‌باشد.
+\item
+توجه داشته باشید که برای استفاده از این بسته، باید فونت‌های
+\verb!Niloofar XB!،
+\verb!Zar XB!
+ و
+\verb!IranNastaliq_1!
+روی سیستم شما نصب شده باشد؛ که به ضمیمه قابل دانلود ‌می‌باشند.
+\item
+در صورتی که کاربر جدیدی هستید که با لاتک کار می‌کنید، لطفاً در تنظیمات فایل‌های 
+\verb!Sharif_Class.cls!
+و
+\verb!Settings.sty!
+تغییری ندهید.
+\item
+در فایل اصلی 
+\verb!Sharif_Thesis.tex!
+و در دستور  
+\verb!\documentclass!
+دو گزینه برای تدوین پایان‌نامه قابل انتخاب می‌باشد؛ گزینه‌ی اول
+\verb!oneside!
+بوده که به شکل تک صفحه و برای تمامی پایان‌نامه‌ها تا سال 1392 استفاده می‌شده و گزینه‌ی دیگر 
+\verb!twoside!
+است که به شکل کتابی و صفحات پشت و رو تدوین گشته و از سال 1393 به بعد فقط این نوع صفحه‌بندی مورد تأیید کتابخانه‌ی مرکزی دانشگاه می‌باشد.
+\item
+در صورتی که نیاز به افزودن بسته‌های کمکی دیگر برای تدوین پایان‌نامه هستید این بسته‌ها را در فایل 
+\verb!Settings.sty!
+و قبل از بسته‌ی 
+\verb!xepersian!
+وارد نمایید؛ هرچند که بسیاری از بسته‌های مورد نیاز، در آن وجود دارد. این فایل را به کمک ویرایشگر نوشتاری خود \linebreak(
+\lr{Texmaker, Texstudio, Texwork, etc.}
+) می‌توانید باز نمایید.
+\item
+از آن‌جا که با هر بار اجرای لاتک، تعدادی فایل‌های کمکی به همراه فایل پی‌دی‌اف ساخته می‌شوند یک برنامه‌ی کمکی با نام
+\verb!FileRemover.bat!
+تدوین شده که تمامی این فایل‌های زائد را حذف می‌نماید. تنها نکته‌ای که باید درنظر داشته باشید این است که این برنامه را باید بعد از تمامی اجراها (
+\lr{Quick Build-Bibtex-...}) فعال نمایید.
+\item
+با تغییر اعداد موجود در 
+\verb!\CoverFa[2.2cm]{logo}!،
+\verb!\CoverEn[2.2cm]{logo}!،
+\linebreak
+\verb!\EsalatFa[1cm]!،
+\verb!\EsalatEn[2.5cm]!،
+و 
+\verb!\Lists[0.7cm]!
+می‌توان فواصل موجود در صفحات اول و اصالت پایان‌نامه و فهرست‌ها را به بهترین شکل تنظیم نمود، با چند بار تغییر آن‌ها می‌توان اعداد مناسب را پیدا نمود! درنظر داشته باشید که اعداد مربوط به \verb!CoverFa! و \verb!CoverEn! را باید آنقدر تغییر دهید که تاریخ ارائه‌ی پایان‌نامه کاملاً در انتهای صفحه واقع شود.
+\item
+نکته‌ی مهم دیگری که باید مد نظر داشته باشید، دو پیوست آخر پایان‌نامه (مقالات فارسی و انگلیسی) می‌باشند. از آن جا که این مقالات با فرمت خاص خود در پایان‌نامه وارد می‌شوند؛ تنها لازم است که فایل \textbf{پی دی اف} آن‌ها با نام (\verb!PaperEn! و \verb!PaperFa!) در پوشه‌ی پیوست‌ها (\verb!4.Appendices!) قرار بگیرد. برای سادگی کار شما، دو نمونه از فایل‌های \verb!tex! مقالات فارسی و انگلیسی (\verb!Elsevier!) به پکیج ضمیمه گشته که با دانلود آن‌ها و قرار دادن متن مورد نظرتان می‌توانید خروجی پی دی اف گرفته و آن‌ها را درون پوشه‌ی پیوست پایان‌نامه قرار دهید. (\verb!Rename! یادتان نرود!!!)
+\end{itemize}
+\section{بسته‌ها و دستورات متداول}
+\begin{itemize}
+\item
+بسته‌های ذکر شده در پکیج
+\begin{latin}
+\verb!usepackage{amsmath,amssymb,amsthm}!\\
+\verb!usepackage{units}!\\
+\verb!usepackage{graphicx}!\\
+\verb!usepackage{booktabs,multirow,ctable}!\\
+\verb!usepackage{footnote}!\\
+\verb!usepackage{caption}!\\
+\verb!usepackage{tocloft}!\\
+\verb!usepackage{hyperref}!\\
+\verb!usepackage{natbib,notoccite}!\\
+\verb!usepackage{fancyhdr}!\\
+\verb!usepackage{geometry}!\\
+\verb!usepackage{setspace}!\\
+\verb!usepackage{enumitem}!\\
+\verb!usepackage{footmisc}!\\
+\verb!usepackage{color}!\\
+\verb!usepackage{pdflscape,pdfpages}!\\
+\verb!usepackage{ifthen,changepage}!\\
+\verb!usepackage{xepersian}!
+\end{latin}
+\item
+دستور کامنت نمودن یک خط:
+\verb!%!
+\item
+دستور کامنت نمودن چند خط:
+\verb!*/ comments ..... \/*!
+\item
+دستور های لایت رنگ زرد:
+\verb!\colorbox{Yellow}{.....}!
+\item
+دستور نوشتن کلمات انگلیسی در متن فارسی:
+\verb!\lr{......}!
+\item
+دستور نوشتن
+\verb!Footnote!
+انگلیسی:
+\verb!\LTRfootnote{......}!
+\item
+دستور مرجع دهی به یک مرجع:
+\verb!\cite{.......}!
+\item
+دستور برچسب گذاری یک جدول، شکل، فرمول برای فراخوانی در بخشی از متن:
+
+\verb!\label{.......}!
+\item
+دستور مرجع دهی به یک جدول، شکل، فرمول:
+\verb!\ref{.......}!
+\item
+دستور شکستگی صفحه (شروع از صفحه‌ی جدید):
+\verb!\newpage\noindent!
+\item
+دستور شکستگی خط:
+\verb!\linebreak!
+\end{itemize}
+\section{نمونه‌ی محیط‌های ریاضی، جدول و ...}
+نمونه‌هایی از محیط‌های سازگار با این بسته در ادامه آورده خواهد شد تا برای سادگی و در صورت نیاز از آن‌ها استفاده گردد. 
+\subsection{محیط \lr{itemize}}
+\begin{itemize}
+\item مورد اول
+\item مورد دوم
+\end{itemize}
+\subsection{محیط \lr{enumerate}}
+\begin{enumerate}
+\item مورد اول
+\item مورد دوم
+\end{enumerate}
+\subsection{محیط ریاضی}
+\begin{itemize}
+\item
+در صورتی که فرمول ریاضی مورد نظر درون متن باشد از عبارت \$ قبل و بعد از عبارت استفاده می‌شود، 
+$x=4$.
+\item 
+فرمول ریاضی شماره دار بین دو جمله از متن
+\begin{align}\label{Eq: equation1}
+\phi _f = \phi _p
+\end{align} 
+\item
+چند فرمول ریاضی شماره دار پی در پی
+\begin{align}\label{Eq: equation2}
+\phi _f = \phi _p
+\end{align}
+\begin{align}\label{Eq: equation3}
+\phi _i = \phi _j
+\end{align} 
+\item
+چند فرمول ریاضی با یک شماره
+\begin{equation} \label{Eq: equation4}
+\begin{split}
+& \phi _f = \phi _p &\\
+& \phi _i = \phi _k &
+\end{split}
+\end{equation}
+\item
+\textbf{ماتریس:} مهم‌ترین نکته در این بخش این است که در ابتدای محیط 
+\verb!align!
+باید دستور
+\verb!\setstretch{1}!
+ آورده شود تا فاصله‌ی سطر و ستون‌های ماتریس برابر شوند!
+\begin{align}
+\setstretch{1}
+{\bf M_N=}
+\begin{bmatrix}
+{\bf A} & {\bf B}\\
+{\bf C} & {\bf D}
+\end{bmatrix}
+\quad , \quad {\bf U_N=}
+\begin{bmatrix}
+\boldsymbol{\Phi}\\
+{\boldsymbol{\xi}}
+\end{bmatrix}
+\quad , \quad {\bf F_N ^i=} \left \{
+\begin{array}{lll}
+0 & & 1 \leq i \leq \tilde{N}\\
+2f(p_0 ^i) & & \tilde{N} + 1 \leq i \leq \tilde{N} + N_0\\
+\end{array}\right. \nonumber
+\end{align}
+\item
+خط کسری مورب:
+${}^1/_2$
+\end{itemize}
+\subsection{وارد نمودن شکل}
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[scale=1.0]{lion}
+\caption{متن زیرنویس اشکال در این قسمت درج می‌گردد.}
+\label{fig: lion}
+\end{figure}
+\begin{itemize}
+\item 
+عبارت
+[!hbtp]
+به این معنی است که لاتک اتوماتیک خودش جای مناسب را برای شکل انتخاب می‌کند.
+\item 
+عبارت 
+[!h]
+ به این معنی است که شکل در همین مکانی که دستور نوشته شده آورده خواهد شد.
+\item
+ عبارت
+[!t] 
+ به این معنی است که شکل در بالای صفحه آورده خواهد شد.
+\item
+ عبارت
+ [!bp] 
+به این معنی است که شکل در انتهای صفحه آورده خواهد شد.
+\end{itemize}
+\subsection{محیط جدول}
+دو نمونه از جدول‌های متداول در این بخش آورده شده، هرچند که انواع گوناگون دیگر نیز در اینترنت یافت می‌شوند:
+\begin{table}[!hbtp]
+\caption{متن بالانویس جداول در این قسمت درج می‌گردد.}
+\centering
+\label{Tab: ParametersValues}
+\begin{latin}
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+{\bf Parameters} & $N_0$ & $N_1$ & Run Time & Relative Error\\
+\hline
+{\bf Values} & $200$ & $400$ & $0.5$ Sec & $\leq 1\%$\\
+\hline
+\end{tabular}
+\end{latin}
+\end{table}
+\begin{table}[!hbtp]
+\caption{متن بالانویس جداول در این قسمت درج می‌گردد.}
+\centering
+\label{Tab: magforce1}
+\begin{latin}
+\begin{tabular}{lcccc}
+\toprule
+\multirow{2}{*}{$\boldsymbol{\mu_p}$} & \multirow{2}{*}{$\boldsymbol{(r_p,\theta_p)}$} & \multicolumn{2}{c}{$\boldsymbol{F_{y} / F_{x}}$} & \multirow{2}{*}{{\bf Relative Error (\%)}}\\
+\cmidrule(r){3-4}
+& & {\bf Suh and Kang}\cite{KangImmersed2011} & {\bf Proposed Method}\\
+\midrule \midrule
+$\boldsymbol{2}$ & $\boldsymbol{(2,80^{\circ})}$ & $1.66323$ & $1.66116$ & $\sim0.124$\\
+& $\boldsymbol{(1.02,45^{\circ})}$ & $2.29308$ & $2.29007$ & $\sim0.131$\\ [4mm]
+$\boldsymbol{200}$ & $\boldsymbol{(2,80^{\circ})}$ & $1.53111$ & $1.52996$ & $\sim0.1$\\
+& $\boldsymbol{(1.02,45^{\circ})}$ & $2.19266$ & $2.20653$ & $\sim0.632$\\
+\bottomrule
+\end{tabular}
+\end{latin}
+\end{table}
+\subsection{تغییر جهت صفحه}
+تغییر جهت صفحه نیز با استفاده از دستور 
+\verb!\begin{landscape}!
+ صورت می‌پذیرد!
+
+\section{اگر سوالی داشتم، از کی بپرسم؟}
+اگر در مورد حروف‌چینی پایان‌نامه‌ی خود با زی‌پرشین سوالی داشتید می‌توانید با مراجعه به کتاب‌های موجودِ همراه بسته به ویژه کتاب
+\href{http://www.tug.ctan.org/tex-archive/info/lshort/persian/lshort.pdf}{مقدمه‌ای نه چندان کوتاه بر \lr{\LaTeXe}}
+\LTRfootnote{http://www.tug.ctan.org/tex-archive/info/lshort/persian/lshort.pdf}
+ترجمه دکتر مهدی امیدعلی، عضو هیات علمی دانشگاه شاهد پاسخ سوالات خود را بیابید. این کتاب، کتاب بسیار کاملی است که خیلی از نیازهای شما در ارتباط با حروف‌چینی را برطرف می‌کند. علاوه بر این تالار گفتگوی 
+\href{http://forum.parsilatex.com}{پارسی‌لاتک}
+\LTRfootnote{http://www.forum.parsilatex.com}
+نیز می‌تواند گزینه‌ی بسیار خوبی برای پاسخگویی به سوالات شما باشد.\\
+در صورتی که در خصوص دستورها و فرامین موجود در بسته‌ی لاتک دانشگاه شریف سوال و یا مشکلی وجود داشت، می‌توانید با نویسنده‌ی بسته، آقای \textbf{افرند دینی} از طریق پست الکترونیکی ایشان
+\verb!afrand67d@yahoo.com!
+تماس حاصل فرمایید.

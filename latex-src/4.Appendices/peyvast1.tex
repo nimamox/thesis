@@ -1,0 +1,196 @@
+\chapter{پیاده‌سازی} \label{Peyvaste1}
+در این پیوست به توضیح کدهای پیاده‌سازی شده برای شبیه‌سازی‌های صورت گرفته می‌پردازیم. 
+
+\section{استخراج ویژگی‌های بصری با STDP}
+با توجه به محاسبات بسیار زیاد صورت گرفته در این قسمت از کد، تصمیم بر پیاده‌سازی آن به زبان \lr{C++} گرفته شد که به موجب آن زمان شبیه‌سازی چند ده برابر از پیاده‌سازی پایتون که پیشتر انجام شده بود سرعت بیشتری پیدا کرد. برای نوشتن این کد از کتابخانه‌ها و ابزارهای ذیل استفاده شده است:
+
+
+
+\begin{itemize}
+\item 
+\textbf{Eigen\footnote{\href{http://eigen.tuxfamily.org/}{\texttt{http://eigen.tuxfamily.org/}}}:}: برای ذخیره‌ی بردارها و ماتریس‌های وزن‌ها، پتانسیل‌های نورونی و محرک‌های ورودی به صورت بهینه و همچنین بهره‌وری از مجموعه دستورات SSE\footnote{\lr{Streaming SIMD Extensions}}.
+\item
+\textbf{LodePNG\footnote{\href{http://lodev.org/lodepng/}{\texttt{http://lodev.org/lodepng/}}}:}
+جهت بارگذاری تصاویر PNG که محرک‌های ورودی را تشکیل می‌دهند.
+
+\item
+\textbf{cereal\footnote{\href{http://uscilab.github.io/cereal/}{\texttt{http://uscilab.github.io/cereal/}}}:}
+برای سریال کردن\footnote{Serialization} ساختمان‌های داده‌ی \lr{C++} و ذخیره و بازیابی وزن‌های شبکه و تصاویری که فیلتر گابور روی آنها اعمال شده است.
+\end{itemize}
+
+\lstset{language=C++,
+                basicstyle=\linespread{1.1}\ttfamily,
+                breaklines=true,
+                backgroundcolor = \color[rgb]{.95,.95,.95},
+                emph=[1]{GaborLayer,Gabor,Kernel},
+                emphstyle=[1]{\color{Aquamarine}},
+                emph=[2]{Scales, Orientations, RFSize, Div, gaborFilters,ImageIdx,FileNames,NumberOfScales,OrderedData,SpikeData2D,gabor,inhibitionPercents,Name,NumberOfFeature,Weights,CRF,SRF,centerRow,centerCol,CStride,Threshold,InhibitionsPercent,KWTA,Ap,An,sOffset,cOffset,iOffset},
+                emphstyle=[2]{\color{OliveGreen}\textbf},
+                emph=[3]{GetGaboredTimes,GenerateGaborFilters,GetPooledInhibitedTimes,TrainKernel,TestKernel,increaseWeight,decreaseWeight,ApplySTDP},
+                emphstyle=[3]{\color{Mahogany}\textbf},
+                postbreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\color{red}\hookrightarrow\space}},
+                keywordstyle=\color{blue}\ttfamily,
+                stringstyle=\color{red}\ttfamily,
+                commentstyle=\color{green}\ttfamily,
+                morecomment=[l][\color{magenta}]{\#}
+}
+\lstnewenvironment{C++source}{\setLTR}{\unsetLTR}
+%\lstnewenvironment{prop}{\setLTR}{\unsetLTR}
+\newcommand{\Cinline}[1]{\lr{\lstinline{#1}}}
+
+\subsection{کلاس Gabor}
+\subsubsection{ویژگی‌ها:}
+\begin{C++source}
+std::vector<float> Scales;
+std::vector<float> Orientations;
+int RFSize;
+float Div;
+std::vector<Eigen::MatrixXf, Eigen::aligned_allocator<Eigen::MatrixXf>> gaborFilters; 
+\end{C++source}
+
+\subsubsection{متدها:}
+\begin{C++source}
+Gabor::Gabor(std::vector<float> scales, std::vector<float> orientations, int rfSize, float div)
+\end{C++source}
+سازنده‌ی کلاس می‌باشد که با استفاده از مقادیر پارامترها، ویژگی‌های کلاس را مقداردهی اولیه کرده و با فراخوانی \Cinline{Gabor::GenerateGaborFilters()} فیلتر‌های گابور خواسته شده را ایجاد می‌نماید. 
+\begin{C++source}
+void Gabor::GenerateGaborFilters()
+\end{C++source}
+یک متد \lr{private} که توسط \lr{constructor} کلاس فراخوانی شده و برای زوایای \lr{Orientation} ماتریس‌های RFSize$\times$RFSize تولید کرده و gaborFilters را پر می‌کند.
+\begin{C++source}
+SpikeVec4D Gabor::GetGaboredTimes(std::string imageAddress)
+\end{C++source}
+این متد توسط کلاس GaborLayer فراخوانی می‌شود. این متد آدرس تصویر را گرفته، توسط متد \lr{ReadImageGrayScale} از \lr{Utility}، آن را \lr{load} و \lr{scale} می‌کند. سپس عناصر \lr{gaboredImages} را پر می‌کند که یک بردار از یک بردار از یک ماتریس دوبعدی است. اندیس اول و دوم به ترتیب scale و orientation است. عناصر آن با ضرب کردن فیلتر gabor در همسایگی آن عنصر در تصویر بارگذازی شده و تقسیم بر تصویر نرمال شده بدست می‌آید. 
+
+خروجی این تابع برای تصویر مذکور، \lr{spike4D} (از نوع ۴ بردار \lr{nested}) است که اندیس اول شماره‌ی scale، اندیس دوم شماره‌ی \lr{orientation} و دو اندیس بعدی موقعیت تصویر است. اگر مقدار پیکسل متناظر در \lr{gaboredImages} بزرگتر از $0.01$ باشد، در آن المان از \lr{spike4D} یک نمونه از کلاس \lr{SpikeData} قرار می‌گیرد که \lr{time} ِ آن  معکوس مقدار پیکسل است. بنابراین هر چه پیکسل روشن‌تر زمان اسپایک زودتر (حداقل ۱ میلی‌ثانیه) و هر چه تصویر تیره‌تر زمان اسپایک دیرتر (حداکثر ۱۰۰ میلی‌ثانیه) خواهد بود.
+
+\subsection{کلاس GaborLayer}
+\subsubsection{ویژگی‌ها:}
+\begin{C++source}
+int ImageIdx;
+std::vector<std::string> FileNames;
+int NumberOfScales;
+SpikeVec2D OrderedData;
+SpikeVec5D SpikeData2D;
+std::shared_ptr<Gabor> gabor;
+Eigen::VectorXd inhibitionPercents;
+\end{C++source}
+\subsubsection{متدها:}
+\begin{C++source}
+GaborLayer::GaborLayer(std::string folderAddress, std::vector<float> scales, std::vector<float> orientations, int rfSize, int div, int cRF, int C1InhibRFsize, float C1InhibPercentClose, float C1InhibPercentFar)
+\end{C++source}
+
+\begin{C++source}
+SpikeVec1D GaborLayer::GetGaboredTimes(std::string imageAddress, SpikeVec4D& spike4DOriPooled, int complexField)
+\end{C++source}
+
+\begin{C++source}
+SpikeVec4D GaborLayer::GetPooledInhibitedTimes(int complexField, const SpikeVec4D& spike4D)
+\end{C++source}
+
+\subsection{کلاس Kernel}
+\subsubsection{ویژگی‌ها:}
+\begin{C++source}
+public:
+    std::string Name;
+    int NumberOfFeature;
+    std::vector<std::vector<Eigen::MatrixXf>> Weights;
+    int CRF;
+    int SRF;
+    int centerRow;
+    int centerCol;
+    int CStride;
+    float Threshold;
+    std::vector<float> InhibitionsPercent;
+    int KWTA;
+    float Ap;
+    float An;
+
+private:
+    int sOffset;
+    int cOffset;
+    int iOffset;
+\end{C++source}
+\subsubsection{متدها:}
+\begin{C++source}
+Kernel::Kernel(std::string name, int numberOfFeatures, int numberOfPreKernelFeatures, int srf, int crf, int cStride, std::vector<float> inhibitionsPercent, float threshold, int kwta, float ap, float an, float meanWeight, float stdDevWeight)
+\end{C++source}
+
+سازنده‌ی کلاس که بعد از مقدار دهی propertyها با پارامتر‌های دریافتی، مارتیس وزن برای نورون‌های کرنل را ایجاد و با یک توزیع تصادفی نرمال مقداردهی اولیه می‌کند. در واقع باید به ازای هر \lr{map} (هر \lr{scale}) یک نورون و یک وزن داشته باشیم ولی چون از \lr{weight sharing} استفاده می‌کنند تنها یک ماتریس وزن (از اندازه‌ی \lr{SRF}$\times$\lr{SRF}) به ازای هر نورون ذخیره می‌کنیم. 
+
+\begin{C++source}
+void Kernel::TrainKernel(SpikeVec1D& spikes, SpikeVec4D& spikes4D)
+\end{C++source}
+
+\begin{C++source}
+SpikeVec1D Kernel::TestKernel(SpikeVec1D& spikes, SpikeVec4D& spikes4DIn, SpikeVec4D& spikes4DPooledOut, bool applyPooling)
+\end{C++source}
+
+\begin{C++source}
+SpikeVec4D Kernel::GetPooledInhibitedTimes(const SpikeVec4D& spikes4D)
+\end{C++source}
+
+\begin{C++source}
+inline void Kernel::increaseWeight(int f, int r, int c, int pref)
+\end{C++source}
+
+\begin{C++source}
+inline void Kernel::decreaseWeight(int f, int r, int c, int pref)
+\end{C++source}
+دوو متد بالا به ترتیب افزایش و کاهش وزن در یک مختصات خاص را انجام می‌دهند.
+
+\begin{C++source}
+void Kernel::ApplySTDP(int f, int r, int c, SpikeVec3D& spikes3D, std::shared_ptr<SpikeData> currentSpike)
+\end{C++source}
+تابع \lr{STDP} را محاسبه کرده و بر حسب آن وز سیناپس را کاهش یا افزایش می‌دهد.
+
+\subsection{کلاس Network}
+\begin{C++source}
+public:
+    std::vector<Kernel> Kernels;
+    std::vector<float> Scales;
+    std::vector<float> Orientations;
+    int GaborRFSize;
+    float GaborDiv;
+    int GaborCRF;
+    int C1InhibRFsize;
+    float C1InhibPercentClose;
+    float C1InhibPercentFar;
+    std::shared_ptr<GaborLayer> gaborLayer;
+private:
+    SpikeVec2D OrderedSpikes;
+    SpikeVec5D Spikes5D;
+\end{C++source}
+
+\begin{C++source}
+Network::Network(std::vector<float> scales, std::vector<float> orientations, int gaborRFSize, float gaborDiv, int gaborCRF, int c1InhibRFsize, float c1InhibPercentClose, float c1InhibPercentFar)
+\end{C++source}
+سازنده‌ی کلاس \lr{Network} است که لیستی از \lr{scales} (مقیاس‌های تصویر)، orientations (جهت‌ها) و مقادیر \lr{gaborRFSize} (اندازه‌ی میدان تاثیر گابور و اندازه‌ و میزان منکوب جانبی را تعیین می‌کند.
+
+\begin{C++source}
+std::shared_ptr<GaborLayer> Network::ApplyGabor(std::string imageFolder, std::vector<float> scales, std::vector<float> orientations, int rfSize, float div, int cRF)
+\end{C++source}
+
+فیلتر گابور را با پارامترهای قید شده روی تصاویر قرارگرفته در پوشه‌ی \lr{imageFolder} اعمال می‌کند.
+
+\begin{C++source}
+std::vector<std::vector<std::vector<float>>> Network::TestNetworkSpikeTiming(std::string imageFolder)
+\end{C++source}
+این متد آدرس یک پوشه را گرفته و با اعمال فیلتر‌ها و لایه‌های مختلف، زمان ضربه‌های خروجی را برمی‌گرداند.
+
+\begin{C++source}
+Eigen::MatrixXi Network::TestNetwork(std::string imageFolder)
+\end{C++source}
+
+این متد آدرس یک پوشه را گرفته و با اعمال فیلتر‌ها و لایه‌های مختلف، شمار ضربه‌های خروجی را برمی‌گرداند.
+
+\begin{C++source}
+void Network::TrainNewKernel(std::string imageFolder, Kernel& kernel, int numberOfEpoch, int numberOfImageRepeat, float apLimit)
+\end{C++source}
+
+آدرس یک پوشه شامل تصاویر آموزشی برای شبکه را دریافت کرده و با تعداد مراحل آموزش \lr{numberOfEpoch}  و با تکرار هر تصویر به تعداد \lr{numberOfImageRepeat} و بیشینه‌ی کاهش نرخ آموزش \lr{apLimit}، وزن‌های شبکه را طی فرآیند آموزش و با متد \lr{STDP} تنظیم می‌کند.
+
+\begin{C++source}
+void Network::SaveKernelMergedWeights(Kernel ker, int epoch)
+\end{C++source}
+وزن‌های کرنل مشخص شده را در قالب فایل‌های اسکریپت که توسط \lr{Gnuplot} قابل رسم است ذخیره می‌کند.

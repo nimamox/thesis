@@ -1,0 +1,79 @@
+% 											 ----------------------------------------------------------------------------
+% 											| 	Sharif Thesis Package ver 1.7												|
+% 											|   									Updated at 04/07/2014					|
+% 											|   									Written by ----- Afrand Dini				|
+% 											|   									E-mail: afrand67d@yahoo.com		|
+% 											|																							|
+% 											|													**All rights are reserved**	|
+% 											 ----------------------------------------------------------------------------
+
+\documentclass[oneside]{SharifClass}
+\usepackage{subfig}
+\usepackage{listings}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{fontspec}
+\setmonofont[Scale= .9]{Monaco}
+\usepackage{pdfpages}
+\usepackage{csquotes}
+\usepackage{setspace}
+\usepackage{Settings}
+%\usepackage[table,xcdraw]{xcolor}
+\usepackage{url}
+
+\renewcommand\thesubfigure{(\alph{subfigure})}
+\DeclareCaptionLabelFormat{closing}{(#2)}
+\captionsetup[subfigure]{labelformat=closing}
+
+\DeclareCaptionSubType[alph]{figure}
+\captionsetup[subfigure]{labelformat=closing,justification=centerlast}
+
+\renewcommand{\floatpagefraction}{.8}%
+
+%\DefaultMathsDigits
+
+\graphicspath{{./1.FrontMatters/Images/}
+					{./2.Chapters/0.Tutorial/Images/}
+					{./2.Chapters/Chapter1/Images/}
+					{./2.Chapters/Chapter2/Images/}
+					{./2.Chapters/Chapter3/Images/}
+					{./2.Chapters/Chapter4/Images/}
+					{./2.Chapters/Chapter5/Images/}
+					{./2.Chapters/Chapter6/Images/}
+					{./4.Appendices/Images/}}
+
+\begin{document}
+	\include{./1.FrontMatters/jeldinfo}
+	\CoverFa[2.0cm]{UT_logo.pdf}
+	%\EsalatFa[1cm] 		%Or 			%\includepdf[pages={1-2}]{./1.FrontMatters/Signatures.pdf} 
+	%\Taeid					%Or 			%\includepdf[pages={3-4}]{./1.FrontMatters/Signatures.pdf}
+
+	\include{./1.FrontMatters/abstract_fa}
+	%\include{./1.FrontMatters/intro}
+	\include{./1.FrontMatters/thanksto}
+
+	\Lists[0.7cm]
+	
+	\setstretch{1.9} 
+	
+	\include{./2.Chapters/Chapter1/chap1}
+	\include{./2.Chapters/Chapter2/chap2}
+	\include{./2.Chapters/Chapter3/chap3}
+	\include{./2.Chapters/Chapter4/chap4}
+	\include{./2.Chapters/Chapter5/chap5}
+	%\include{./2.Chapters/Chapter6/chap6}
+	
+	\Bibliography[unsrt-fa]{./3.References/References}
+	%\include{./3.References/Reference}
+	
+	\appendix
+	\include{./4.Appendices/dic_fa_en}
+	\include{./4.Appendices/peyvast1}
+	%\include{./4.Appendices/peyvast2}
+	%\input{./4.Appendices/peyvast3}
+	%\input{./4.Appendices/peyvast4}
+	%\input{./4.Appendices/peyvast5}
+
+	\include{./1.FrontMatters/abstract_en}
+	%\EsalatEn[3cm] 		%OR			%	\includepdf[pages={5-6}]{./1.FrontMatters/Signatures.pdf}
+	\CoverEn[2.2cm]{UT_logo.pdf}
+\end{document}
